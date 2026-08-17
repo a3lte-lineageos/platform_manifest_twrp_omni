@@ -7,10 +7,12 @@
     <remote name="LineageOS"
             fetch="https://github.com/LineageOS"
             review="https://review.lineageos.org" />
-
-<!-- TWRP lives in TeamWin repo, not AOSP -->
-    <remove-project name="platform/bootable/recovery" />
-    <project path="bootable/recovery" name="android_bootable_recovery" remote="TeamWin" revision="android-9.0" />
+    
+    <remote name="SHRP"
+            fetch="https://github.com/SHRP" />
+<!-- SHRP lives in SkyHawk repo, not OmniROM -->
+    <remove-project name="android_bootable_recovery" />
+    <project path="bootable/recovery" name="bootable_recovery" remote="SHRP" revision="android-8.1" />
 
 <!-- Use TeamWin fork for repacker support -->
   <remove-project name="android_build" />
