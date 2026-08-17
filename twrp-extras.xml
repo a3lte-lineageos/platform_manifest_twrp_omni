@@ -4,13 +4,18 @@
             fetch="https://github.com/TeamWin"
             review="https://gerrit.twrp.me" />
 
+    <remote name="fox"
+            fetch="https://gitlab.com/OrangeFox" />
+
     <remote name="LineageOS"
             fetch="https://github.com/LineageOS"
             review="https://review.lineageos.org" />
 
-<!-- TWRP lives in TeamWin repo, not AOSP -->
-    <remove-project name="platform/bootable/recovery" />
-    <project path="bootable/recovery" name="android_bootable_recovery" remote="TeamWin" revision="android-9.0" />
+<!-- OrangeFox lives in fox-9.0 repo, not OmniROM -->
+    <remove-project name="android_bootable_recovery" />
+    <project path="bootable/recovery" name="bootable/Recovery" remote="fox" revision="fox_9.0" />
+    <project path="vendor/recovery" name="vendor/recovery" remote="fox" revision="legacy" />
+    <project path="bootable/recovery/gui/theme" name="misc/Theme" remote="fox" revision="master" />
 
 <!-- Use TeamWin fork for repacker support -->
   <remove-project name="android_build" />
